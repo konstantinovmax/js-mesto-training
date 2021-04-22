@@ -1,6 +1,7 @@
 @import url(./__caption/element__caption.css);
 @import url(./__image/element__image.css);
-@import url(./__like/element__like.css);
+@import url(./__like-button/element__like-button.css);
+@import url(./__like-button/_active/element__like-button_active.css);
 @import url(./__caption-container/element__caption-container.css);
 
 .element {

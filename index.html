@@ -29,42 +29,42 @@
                     <img class="element__image" src="./images/elements-yakutia.jfif" alt="Ленские столбы">
                     <div class="element__caption-container">
                         <figcaption class="element__caption">Якутия</figcaption>
-                        <div class="element__like"></div>
+                        <button class="element__like-button"></button>
                     </div>
                 </figure>
                 <figure class="element">
                     <img class="element__image" src="./images/elements-kamchatka.jfif" alt="Камчатка">
                     <div class="element__caption-container">
                         <figcaption class="element__caption">Камчатка</figcaption>
-                        <div class="element__like" src="./images/element-like.svg"></div>
+                        <button class="element__like-button"></button>
                     </div>
                 </figure>
                 <figure class="element">
                     <img class="element__image" src="./images/elements-altai.jfif" alt="Алтайские горы">
                     <div class="element__caption-container">
                         <figcaption class="element__caption">Алтай</figcaption>
-                        <div class="element__like" src="./images/element-like.svg"></div>
+                        <button class="element__like-button"></button>
                     </div>
                 </figure>
                 <figure class="element">
                     <img class="element__image" src="./images/elments-dagestan.jfif" alt="Дагестан">
                     <div class="element__caption-container">
                         <figcaption class="element__caption">Дагестан</figcaption>
-                        <div class="element__like" src="./images/element-like.svg"></div>
+                        <button class="element__like-button"></button>
                     </div>
                 </figure>
                 <figure class="element">
                     <img class="element__image" src="./images/elements-sakhalin.jfif" alt="Маяк Анива">
                     <div class="element__caption-container">
                         <figcaption class="element__caption">Сахалин</figcaption>
-                        <div class="element__like" src="./images/element-like.svg"></div>
+                        <button class="element__like-button"></button>
                     </div>
                 </figure>
                 <figure class="element">
                     <img class="element__image" src="./images/elements-kaliningrad.jfif" alt="Куршская коса">
                     <div class="element__caption-container">
                         <figcaption class="element__caption">Калининград</figcaption>
-                        <div class="element__like" src="./images/element-like.svg"></div>
+                        <button class="element__like-button"></button>
                     </div>
                 </figure>
             </section>
@@ -73,15 +73,42 @@
             <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
         </footer>
     </div>
-    <div class="modal">
-        <form action="#" class="modal__container">
+    <div class="modal modal_type_edit-profile">
+        <form name="form1" action="#" class="modal__container modal__container_type_edit-profile">
             <h2 class="modal__title">Редактировать профиль</h2>
             <input name="name" type="text" class="modal__input modal__input_type-name" autocomplete="off">
             <input name="description" type="text" class="modal__input modal__input_type-description" autocomplete="off">
             <button type="submit" class="modal__save-button">Сохранить</button>
-            <button class="modal__close-button"></button>
+            <button class="modal__close-button modal__close-button_type-edit"></button>
         </form>
     </div>
+    <div class="modal modal_type_add-element">
+        <form name="form1" action="#" class="modal__container modal__container_type_add-element" novalidate>
+            <h2 class="modal__title">Новое место</h2>
+            <input id="name-input" name="name" type="text" class="modal__input modal__input_type_place" required="required" placeholder="Название" minlength="1" maxlength="30">
+            <input id="description-input" name="description" type="url" class="modal__input modal__input_type_url" required="required" placeholder="Ссылка на картинку">
+            <button type="submit" class="modal__save-button">Сохранить</button>
+            <button type="reset" class="modal__close-button modal__close-button_type-add"></button>
+        </form>
+    </div>
+    <div class="modal modal_type_image">
+        <div class="modal__container_type-picture">
+            <button type="reset" class="modal__close-button modal__close-button_type-image"></button>
+            <figure>
+                <img class="modal__image" src="#" alt="">
+                <figcaption class="modal__caption"></figcaption>
+            </figure>
+        </div>
+    </div>
+    <template id="card">
+        <figure class="element">
+            <img class="element__image" src="" alt="">
+            <div class="element__caption-container">
+                <figcaption class="element__caption"></figcaption>
+                <button class="element__like-button"></button>
+            </div>
+        </figure>
+    </template>
     <script src="./pages/index.js"></script>
 </body>
 </html>
