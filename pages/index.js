@@ -12,16 +12,15 @@ const editPopupCloseButton = document.querySelector('.modal__close-button_type-e
 const addPopupCloseButton = document.querySelector('.modal__close-button_type-add');
 const imagePopupCloseButton = document.querySelector('.modal__close-button_type-image');
 
-const likeButton = document.querySelector('.element__like-button');
-
 const profileName = document.querySelector('.profile__name');
 const profileDescription = document.querySelector('.profile__description');
 const inputName = document.querySelector('.modal__input_type-name');
 const inputDescription = document.querySelector('.modal__input_type-description');
-const editPopupSubmit = document.querySelector('.modal__container_type_edit-profile');
-
 const inputPlace = document.querySelector('.modal__input_type_place');
 const inputUrl = document.querySelector('.modal__input_type_url');
+
+const editPopupSubmit = document.querySelector('.modal__container_type_edit-profile');
+const addPopupSubmit = document.querySelector('.modal__container_type_add-element');
 
 const elements = document.querySelector('.elements');
 
@@ -79,8 +78,24 @@ function editFormSubmitHandler(e) {
     closePopup(editProfilePopup);
 }
 
-function likeHandler(e) {
-    e.target.classList.toggle('element__like-button_active');
+function addPlaceSubmitHandler(e) {
+    e.preventDefault();
+    const cardTemplate = document.querySelector('#card').content;
+    const cardElement = cardTemplate.querySelector('.element').cloneNode(true);
+
+    cardElement.querySelector('.element__image').src = inputUrl.value;
+    cardElement.querySelector('.element__caption').textContent = inputPlace.value;
+
+    elements.prepend(cardElement);
+    closePopup(addPlacePopup);
+
+    const likeButton = document.querySelector('.element__like-button');
+    likeButton.addEventListener('click', function(evt) {
+        evt.target.classList.toggle('element__like-button_active');
+    });
+
+    inputUrl.value = '';
+    inputPlace.value = '';
 }
 
 inputName.value = profileName.textContent;
@@ -88,7 +103,6 @@ inputDescription.value = profileDescription.textContent;
 
 editButton.addEventListener('click', editPopup);
 addButton.addEventListener('click', addPopup);
-likeButton.addEventListener('click', likeHandler);
 userImage.addEventListener('click', imagePopup);
 
 editPopupCloseButton.addEventListener('click', function() {
@@ -102,3 +116,4 @@ imagePopupCloseButton.addEventListener('click', function() {
 });
 
 editPopupSubmit.addEventListener('submit', editFormSubmitHandler);
+addPopupSubmit.addEventListener('submit', addPlaceSubmitHandler);
