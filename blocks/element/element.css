@@ -3,6 +3,7 @@
 @import url(./__like-button/element__like-button.css);
 @import url(./__like-button/_active/element__like-button_active.css);
 @import url(./__caption-container/element__caption-container.css);
+@import url(./__delete/element__delete.css);
 
 .element {
     margin: 0;
@@ -10,4 +11,5 @@
     border-radius: 10px;
     box-sizing: border-box;
     overflow: hidden;
+    position: relative;
 }

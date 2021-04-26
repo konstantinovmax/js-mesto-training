@@ -3,12 +3,14 @@
 @import url(./__input/modal__input.css);
 @import url(./__save-button/modal__save-button.css);
 @import url(./__close-button/modal__close-button.css);
+@import url(./__close-button/_type/modal__close-button_type-picture.css);
 @import url(./__container/_type/modal__container_type-picture.css);
 @import url(./__container/_type/modal__container_type_add-element.css);
 @import url(./__container/_type/modal__container_type_edit-profile.css);
 @import url(./_type/modal_type_add-element.css);
 @import url(./_type/modal_type_edit-element.css);
 @import url(./_type/modal_type_picture.css);
+@import url(./__image/modal__image.css);
 
 .modal {
     position: fixed;
