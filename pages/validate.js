@@ -54,6 +54,9 @@ function enableValidation() {
     formList.forEach((formElement) => {
         formElement.addEventListener('submit', function(e) {
         e.preventDefault();
+        const inputList = Array.from(formElement.querySelectorAll('.modal__input'));
+        const buttonElement = formElement.querySelector('.modal__save-button');
+        toggleButtonState(inputList, buttonElement);
         });
         
         setEventListeners(formElement);
