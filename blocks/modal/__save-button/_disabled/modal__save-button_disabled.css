@@ -1,0 +1,4 @@
+.modal__save-button_disabled {
+    background-color: grey;
+    pointer-events: none;
+}

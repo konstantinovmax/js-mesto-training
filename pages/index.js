@@ -55,10 +55,28 @@ const initialCards = [
 
 function openPopup(popup) {
     popup.classList.add('modal_is-open');
+    document.addEventListener('keydown', closeEscapeButton);
+    document.addEventListener('mousedown', closeClickOverlay);
 }
 
 function closePopup(popup) {
     popup.classList.remove('modal_is-open');
+    document.removeEventListener('keydown', closeEscapeButton);
+    document.removeEventListener('mousedown', closeClickOverlay);
+}
+
+function closeEscapeButton(e) {
+    const popup = document.querySelector('.modal_is-open'); 
+    if (e.key === 'Escape') {
+        closePopup(popup);
+    }
+}
+
+function closeClickOverlay(e) {
+    const popup = document.querySelector('.modal_is-open'); 
+    if (e.target.classList.contains('modal')) {
+        closePopup(popup);
+    }
 }
 
 function editPopup() {

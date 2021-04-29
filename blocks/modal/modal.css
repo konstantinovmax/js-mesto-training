@@ -1,6 +1,7 @@
 @import url(./__container/modal__container.css);
 @import url(./__title/modal__title.css);
 @import url(./__input/modal__input.css);
+@import url(./__input/_type/modal__input_type-error.css);
 @import url(./__save-button/modal__save-button.css);
 @import url(./__close-button/modal__close-button.css);
 @import url(./__close-button/_type/modal__close-button_type-picture.css);
@@ -11,6 +12,13 @@
 @import url(./_type/modal_type_edit-element.css);
 @import url(./_type/modal_type_picture.css);
 @import url(./__image/modal__image.css);
+@import url(./__input-error/modal__input-error.css);
+@import url(./__input-error/_active/modal__input-error_active.css);
+@import url(./__input-name-error/modal__input-name-error.css);
+@import url(./__input-description-error/modal__input-description-error.css);
+@import url(./__input-place-error/modal__input-place-error.css);
+@import url(./__input-url-error/modal__input-url-error.css);
+@import url(./__save-button/_disabled/modal__save-button_disabled.css);
 
 .modal {
     position: fixed;

@@ -33,19 +33,23 @@
         </footer>
     </div>
     <div class="modal modal_type_edit-profile">
-        <form name="form1" action="#" class="modal__container modal__container_type_edit-profile">
+        <form name="form1" action="#" class="modal__container modal__container_type_edit-profile" novalidate>
             <h2 class="modal__title">Редактировать профиль</h2>
-            <input name="name" type="text" class="modal__input modal__input_type-name" autocomplete="off">
-            <input name="description" type="text" class="modal__input modal__input_type-description" autocomplete="off">
+            <input name="name" type="text" id="modal__input-name" class="modal__input modal__input_type-name" autocomplete="off" minlength="2" maxlength="40" required>
+            <span class="modal__input-name-error"></span>
+            <input name="description" type="text" id="modal__input-description" class="modal__input modal__input_type-description" autocomplete="off" minlength="2" maxlength="200" required>
+            <span class="modal__input-description-error"></span>
             <button type="submit" class="modal__save-button">Сохранить</button>
             <button class="modal__close-button modal__close-button_type-edit"></button>
         </form>
     </div>
     <div class="modal modal_type_add-element">
-        <form name="form1" action="#" class="modal__container modal__container_type_add-element" novalidate>
+        <form name="form2" action="#" class="modal__container modal__container_type_add-element" novalidate>
             <h2 class="modal__title">Новое место</h2>
-            <input id="name-input" name="name" type="text" class="modal__input modal__input_type_place" required="required" placeholder="Название" minlength="1" maxlength="30">
-            <input id="description-input" name="description" type="url" class="modal__input modal__input_type_url" required="required" placeholder="Ссылка на картинку">
+            <input name="name" type="text" id="modal__input-place" class="modal__input modal__input_type_place" required="required" placeholder="Название" minlength="1" maxlength="30" required autocomplete="off">
+            <span class="modal__input-place-error"></span>
+            <input name="description" type="url" id="modal__input-url" class="modal__input modal__input_type_url" required="required" placeholder="Ссылка на картинку" required>
+            <span class="modal__input-url-error"></span>
             <button type="submit" class="modal__save-button">Сохранить</button>
             <button type="reset" class="modal__close-button modal__close-button_type-add"></button>
         </form>
@@ -70,5 +74,6 @@
         </figure>
     </template>
     <script src="./pages/index.js"></script>
+    <script src="./pages/validate.js"></script>
 </body>
 </html>
