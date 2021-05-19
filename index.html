@@ -46,7 +46,7 @@
     <div class="modal modal_type_add-element">
         <form name="form2" action="#" class="modal__container modal__container_type_add-element" novalidate>
             <h2 class="modal__title">Новое место</h2>
-            <input name="name" type="text" id="modal__input-place" class="modal__input modal__input_type_place" required="required" placeholder="Название" minlength="1" maxlength="30" required autocomplete="off">
+            <input name="name" type="text" id="modal__input-place" class="modal__input modal__input_type_place" required="required" placeholder="Название" minlength="2" maxlength="30" required autocomplete="off">
             <span class="modal__input-place-error"></span>
             <input name="description" type="url" id="modal__input-url" class="modal__input modal__input_type_url" required="required" placeholder="Ссылка на картинку" required>
             <span class="modal__input-url-error"></span>
@@ -63,7 +63,7 @@
             </figure>
         </div>
     </div>
-    <template id="card">
+    <template id="card" class="card">
         <figure class="element">
             <button type="button" class="element__delete"></button>
             <img class="element__image" src="" alt="">
@@ -73,7 +73,6 @@
             </div>
         </figure>
     </template>
-    <script src="./pages/index.js"></script>
-    <script src="./pages/validate.js"></script>
+    <script type="module" src="./pages/index.js"></script>
 </body>
 </html>
