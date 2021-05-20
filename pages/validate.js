@@ -34,7 +34,7 @@ function toggleButtonState(inputList, buttonElement) {
       buttonElement.classList.remove('modal__save-button_disabled');
       buttonElement.removeAttribute('disabled', 'disabled');
     }
-  }
+}
 
 function setEventListeners(formElement) {
     const inputList = Array.from(formElement.querySelectorAll('.modal__input'));

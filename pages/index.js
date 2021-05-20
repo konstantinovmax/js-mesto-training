@@ -1,5 +1,6 @@
 import { initialCards } from './initialCards.js';
 import { Card } from './Card.js'
+import { formValidation, FormValidator } from './FormValidator.js';
 
 const editProfilePopup = document.querySelector('.modal_type_edit-profile');
 const addPlacePopup = document.querySelector('.modal_type_add-element');
@@ -25,6 +26,8 @@ const cardElement = cardTemplate.querySelector('.element');
 
 const modalImage = document.querySelector('.modal__image');
 const modalImageName = document.querySelector('.modal__caption');
+
+const addPlaceSaveButton = document.querySelector('.modal__save-button_type_add');
 
 function openPopup(popup) {
     popup.classList.add('modal_is-open');
@@ -66,6 +69,9 @@ function addPlaceSubmitHandler(e) {
 
     inputUrl.value = '';
     inputPlace.value = '';
+
+    addPlaceSaveButton.setAttribute('disabled', '');
+    addPlaceSaveButton.classList.add('modal__save-button_disabled');
 }
 
 function createCards(item) {
@@ -120,3 +126,9 @@ initialCards.forEach((item) => {
 
     document.querySelector('.elements').append(cardElement);
 });
+
+const addPlaceFormValidation = new FormValidator(formValidation, addPopupSubmit);
+const editNameFormValidation = new FormValidator(formValidation, editPopupSubmit);
+
+addPlaceFormValidation.enableValidation();
+editNameFormValidation.enableValidation();
