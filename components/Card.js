@@ -1,14 +1,9 @@
-class Card {
-    constructor(data, cardSelector, openPopup, imagePopup, imagePopupImage, imagePopupCaption, addPlacePopup, editProfilePopup) {
+export default class Card {
+    constructor(data, cardSelector, handleCardClick) {
         this._name = data.name;
         this._link = data.link;
         this._cardSelector = cardSelector;
-        this._openPopup = openPopup;
-        this._imagePopup = imagePopup;
-        this._imagePopupImage = imagePopupImage;
-        this._imagePopupCaption = imagePopupCaption;
-        this._addPlacePopup = addPlacePopup;
-        this._editProfilePopup = editProfilePopup;
+        this._handleCardClick = handleCardClick;
     }
 
     _getTemplate() {
@@ -39,21 +34,6 @@ class Card {
         e.target.closest('.element').remove();
     }
 
-    _handleOpenImagePopup() {
-        this._imagePopupImage.src = this._link;
-        this._imagePopupImage.alt = this._name;
-        this._imagePopupCaption.textContent = this._name;
-        this._openPopup(this._imagePopup);
-    }
-
-    _handleOpenAddPlacePopup() {
-        this._openPopup(this._addPlacePopup);
-    }
-
-    _handleOpenEditPopup() {
-        this._openPopup(this._editProfilePopup);
-    }
-
     _setEventListeners() {
         this._element.querySelector('.element__like-button').addEventListener('click', (e) => {
             this._elementLike(e);
@@ -64,17 +44,7 @@ class Card {
         });
 
         this._element.querySelector('.element__image').addEventListener('click', () => {
-            this._handleOpenImagePopup();
-        });
-
-        document.querySelector('.profile__add-button').addEventListener('click', () => {
-            this._handleOpenAddPlacePopup();
-        })
-
-        document.querySelector('.profile__edit-button').addEventListener('click', () => {
-            this._handleOpenEditPopup();
+            this._handleCardClick();
         });
     }
 }
-
-export { Card };
