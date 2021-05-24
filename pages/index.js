@@ -5,13 +5,9 @@ import PopupWithForm from '../components/PopupWithForm.js';
 import PopupWithImage from '../components/PopupWithImage.js';
 import Section from '../components/Section.js';
 import UserInfo from '../components/UserInfo.js';
-import { imagePopupImage, imagePopupCaption, editProfilePopup, addPlacePopup, userImagePopup, openPopupEditButton, openPopupAddButton, profileName, profileDescription, inputName, inputDescription, editPopupSubmit, addPopupSubmit, elements, cardTemplate, cardElementOne, initialCards, formValidation } from '../utils/constants.js';
-
-const addPlaceFormValidation = new FormValidator(formValidation, addPopupSubmit);
-const editNameFormValidation = new FormValidator(formValidation, editPopupSubmit);
-
-addPlaceFormValidation.enableValidation();
-editNameFormValidation.enableValidation();
+import { openPopupEditButton, openPopupAddButton, imagePopupImage, imagePopupCaption, inputName,
+    inputDescription, editPopupSubmit, addPopupSubmit, elements, cardTemplate,
+    profileName, profileDescription, editProfilePopup, addPlacePopup, userImagePopup, initialCards, formValidation  } from '../utils/constants.js';
 
 const cardsList = new Section({ 
     items: initialCards, 
@@ -71,3 +67,10 @@ function createCard(cardInfo) {
     ); 
     return card.generateCard(); 
 }
+
+const addPlaceFormValidation = new FormValidator(formValidation, addPopupSubmit);
+const editNameFormValidation = new FormValidator(formValidation, editPopupSubmit);
+
+addPlaceFormValidation.enableValidation();
+editNameFormValidation.enableValidation();
+

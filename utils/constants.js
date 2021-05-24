@@ -5,8 +5,6 @@ const openPopupAddButton = document.querySelector('.profile__add-button');
 const imagePopupImage = document.querySelector('.modal__image');
 const imagePopupCaption = document.querySelector('.modal__caption');
 
-
-
 const inputName = document.querySelector('.modal__input_type-name');
 const inputDescription = document.querySelector('.modal__input_type-description');
 
@@ -58,4 +56,6 @@ const formValidation = {
     errorClass: 'modal__input-error_active' 
 }
 
-export { imagePopupImage, imagePopupCaption, editProfilePopup, addPlacePopup, userImagePopup, openPopupEditButton, openPopupAddButton, profileName, profileDescription, inputName, inputDescription, editPopupSubmit, addPopupSubmit, elements, cardTemplate, cardElementOne, initialCards, formValidation };
+export { openPopupEditButton, openPopupAddButton, imagePopupImage, imagePopupCaption, inputName,
+  inputDescription, editPopupSubmit, addPopupSubmit, elements, cardTemplate,
+  profileName, profileDescription, editProfilePopup, addPlacePopup, userImagePopup, initialCards, formValidation };
